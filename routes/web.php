@@ -19,4 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/p/create', 'PostController@create');
+Route::post('/p', 'PostController@store');
+Route::get('/p/{post}', 'PostController@show');
+
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
+Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
+Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
