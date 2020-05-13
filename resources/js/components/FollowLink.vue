@@ -1,7 +1,7 @@
 <template>
-    <div>
-      <button class="btn btn-primary ml-4" @click="followUser" v-text="buttonText">Follow</button>
-    </div>
+    
+    <a href="#" class="p-3" @click="followUser" v-text="buttonText">Follow</a>
+    
 </template>
 
 <script>
@@ -23,7 +23,6 @@
             followUser() {
                 axios.post('/follow/' + this.userId)
                     .then(response => {
-
                         this.status = ! this.status;
                     })
 

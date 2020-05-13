@@ -25,7 +25,7 @@
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
                     <div><img src="/svg/freeCodeCampLogo.svg" style="height:25px; border-right: 1px solid #333333;" class="pr-3"></div>
-                    <div class="pl-3 pt-1">freeCodeGam</div>
+                    <div class="pl-3 pt-1">freeCodeGam</div>   
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                       
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -50,6 +50,11 @@
                                 </li>
                             @endif
                         @else
+                            <li class="pt-2 pr-1 "> 
+                                <span class="font-weight-bold">                          
+                                    <a href="/profile/{{ Auth::user()->id }}"><i class="fas fa-user"></i></a>
+                                </span>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->username }} <span class="caret"></span>

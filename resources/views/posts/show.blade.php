@@ -17,7 +17,7 @@
                             <a href="/profile/{{ $post->user->id }}"> 
                                 <span class="text-dark">{{ $post->user->username }}</span> 
                             </a>
-                            <a href="#" class="p-3">Follow</a>
+                            <follow-link user-id="{{ $post->user->id }}" follows="{{ $follows }}"></follow-link>
                         </div>
                     </div>
                     
