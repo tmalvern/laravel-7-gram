@@ -50,9 +50,19 @@
                                 </li>
                             @endif
                         @else
-                            <li class="pt-2 pr-1 "> 
+                            <li class="pt-2 pr-3">
+                                <span>
+                                    <a href="/"><i aria-hidden="true" title="Posts" class="fas fa-home fa-lg" style="color:#6c757d"></i></a>
+                                </span>
+                            </li>
+                            <li class="pt-2 pr-2">
+                                <span>
+                                    <a href="/p/create"><i aria-hidden="true" title="Add New Post" class="far fa-plus-square fa-lg" style="color:#6c757d"></i></a>
+                                </span>
+                            </li>
+                            <li class="pt-2 pr-2 pl-2"> 
                                 <span class="font-weight-bold">                          
-                                    <a href="/profile/{{ Auth::user()->id }}"><i class="fas fa-user"></i></a>
+                                    <a href="/profile/{{ Auth::user()->id }}"><i aria-hidden="true" title="View Profile" class="fas fa-user fa-lg" style="color:#6c757d"></i></a>
                                 </span>
                             </li>
                             <li class="nav-item dropdown">
@@ -61,6 +71,8 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                   
+                                    <a  class="dropdown-item" href="/profile/{{ Auth::user()->id }}">Profile</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

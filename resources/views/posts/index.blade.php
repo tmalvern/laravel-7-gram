@@ -5,7 +5,7 @@
 @foreach($posts as $post)
     <div class="row">
         <div class="col-6 offset-3">
-            <a href="/profile/{{ $post->user->id }}"> 
+            <a href="/p/{{ $post->id }}"> 
                 <img src="/storage/{{ $post->image}}" alt="{{ $post->caption }}" class="w-100">
             </a>
         </div>
@@ -18,7 +18,7 @@
                     <a href="/profile/{{ $post->user->id }}"> 
                         <span class="text-dark">{{ $post->user->username }} </span>
                     </a>
-                </span> {{ $post->caption }}
+                </span> {{ $post->caption }} <small class="text-muted"> {{ $post->createdWhen($post->created_at) }}</small>
             </p>
         </div>
     </div>

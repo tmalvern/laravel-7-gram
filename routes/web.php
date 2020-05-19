@@ -16,6 +16,7 @@ use App\Mail\NewUserWelcomeMail;
 Auth::routes();
 
 Route::post('/follow/{user}', 'FollowsController@store');
+Route::post('/comment/{post}', 'CommentController@store');
 
 Route::get('/', 'PostController@index');
 Route::get('/p/create', 'PostController@create');

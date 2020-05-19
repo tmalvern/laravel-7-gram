@@ -16,8 +16,10 @@ class PostController extends Controller
     public function index()
     {
         $users = auth()->user()->following()->pluck('profiles.user_id');
-
+        $users [] = auth()->user()->id;
+        
         $posts = Post::whereIn('user_id', $users)->with('user')->latest()->paginate(5);
+
         return view('posts.index', compact('posts'));
     }
 
@@ -47,10 +49,11 @@ class PostController extends Controller
         return redirect('/profile/'.auth()->user()->id);
     }
 
-    public function show(\App\Post $post)
+    public function show(Post $post)
     {
         $follows = (auth()->user()) ? auth()->user()->following->contains($post->user->id) : false;
-        return view('posts.show', compact('post', 'follows'));
-    }
+        $comments = $post->comments()->with('user')->get();
 
+        return view('posts.show', compact('post', 'follows', 'comments'));
+    }
 }

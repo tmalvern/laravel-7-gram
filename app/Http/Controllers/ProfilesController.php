@@ -60,7 +60,7 @@ class ProfilesController extends Controller
         {
             $imagePath = request()->image->store('profile', 'public');
 
-            $image = Image::make(public_path("storage/{$imagePath}"))->fit(100, 100);
+            $image = Image::make(public_path("storage/{$imagePath}"))->fit(200, 200);
             $image->save();
 
             $imageArr = ['image' => $imagePath];
